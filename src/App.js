@@ -1,12 +1,25 @@
+// React router
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Components / Screens
+import SignUpScreen from "./screens/SignUpScreen";
+import LogInScreen from "./screens/LogInScreen";
+
+// UI
 import "./App.css";
 
-function App() {
+const App = () => {
   // JSX //////////////////////////////////
   return (
-    <div className="app">
-      <h1>app</h1>
-    </div>
+    <Router>
+      <div className="h-screen overflow-y-hidden bg-dark text-white">
+        <Routes>
+          <Route path="/" element={<SignUpScreen />} />
+          <Route path="/log-in" element={<LogInScreen />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
