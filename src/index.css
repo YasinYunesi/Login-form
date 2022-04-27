@@ -3,6 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Costume tailwind classes */
+@layer components {
+  .transition_150 {
+    @apply transition-all duration-150;
+  }
+  .transition_200 {
+    @apply transition-all duration-300;
+  }
+  .social_btn {
+    @apply rounded-full bg-neutral-400 text-light_dark text-2xl p-5 mr-5 transition_200 hover:text-white;
+  }
+  .grid_flow_col_2 {
+    @apply grid grid-flow-col grid-cols-2;
+  }
+  .input_icon {
+    @apply absolute top-0 bottom-0 right-0 pr-3 text-xl text-gray-400 flex items-center z-10;
+  }
+  .form_input {
+    @apply bg-light_dark border border-dark_gray p-5 outline-none rounded-lg w-full text-lg placeholder:text-base focus:outline-none focus:brightness-110 hover:brightness-110 transition_150 ease-linear;
+  }
+  .welcome_text {
+    @apply mt-6 text-4xl font-bold tracking-wide;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",

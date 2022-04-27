@@ -5,7 +5,7 @@ import Form from "../components/Form";
 const SignUpScreen = () => {
   return (
     <div className="grid grid-flow-col grid-cols-3">
-      <img src={image} alt="background" />
+      <img className="h-screen" src={image} alt="background" />
 
       {/* The form (right side) */}
       <Form type="signUp" />
