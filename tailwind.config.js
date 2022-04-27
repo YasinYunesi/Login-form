@@ -7,6 +7,7 @@ module.exports = {
         light_dark: "#353738",
         dark_gray: "#616161",
         light_yellow: "#f8c168",
+        dark_yellow: "#cc9c50",
         instagram: "#e95950",
         telegram: "#229ED9",
         linkedin: "#0e76a8",
