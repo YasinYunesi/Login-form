@@ -12,7 +12,7 @@ const App = () => {
   // JSX //////////////////////////////////
   return (
     <Router>
-      <div className="h-screen overflow-y-hidden bg-dark text-white">
+      <div className="h-screen overflow-x-hidden bg-dark text-white">
         <Routes>
           <Route path="/" element={<SignUpScreen />} />
           <Route path="/log-in" element={<LogInScreen />} />

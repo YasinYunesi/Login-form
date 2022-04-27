@@ -1,15 +1,19 @@
 // UI
-import image from "../assets/3.png";
-import Form from "./../components/Form";
+import image from "../assets/1.png";
+import image2 from "../assets/2.jpg";
+import Content from "../components/Content";
 
 const LogInScreen = () => {
   return (
-    <div className="grid grid-flow-col grid-cols-3">
-      <img className="h-screen" src={image} alt="background" />
+    <>
+      <img className="lg:hidden" src={image2} alt="background" />
+      <div className="grid grid-flow-col grid-cols-2 lg:grid-cols-3 h-full">
+        <img className="lg:col-span-1 h-full hidden lg:block" src={image} alt="background" />
 
-      {/* The form (right side) */}
-      <Form type="logIn" />
-    </div>
+        {/* The form (right side) */}
+        <Content type="logIn" />
+      </div>
+    </>
   );
 };
 

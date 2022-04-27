@@ -12,6 +12,10 @@ module.exports = {
         linkedin: "#0e76a8",
         github: "#171515",
       },
+      screens: {
+        "3xl": "1792px",
+        xs: "350px",
+      },
     },
   },
   plugins: [],
