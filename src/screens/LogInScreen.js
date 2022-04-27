@@ -1,5 +1,5 @@
 // UI
-import image from "../assets/1.png";
+import image from "../assets/1.jpg";
 import image2 from "../assets/2.jpg";
 import Content from "../components/Content";
 
