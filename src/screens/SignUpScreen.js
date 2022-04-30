@@ -11,7 +11,7 @@ const SignUpScreen = () => {
         <img className="lg:col-span-1 h-full hidden lg:block" src={image} alt="background" />
 
         {/* The form (right side) */}
-        <Content type="signUp" />
+        <Content />
       </div>
     </>
   );
