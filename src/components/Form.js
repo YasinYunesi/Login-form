@@ -62,7 +62,7 @@ const Form = () => {
         <div className="row-start-2 xl:row-start-1 xl:col-start-2 my-auto">
           <h1 className="text-center xl:text-right text-gray-400">
             Already a memeber of the community?{" "}
-            <Link to="/sign-up" className="text-light_yellow underline brightness-90 transition_150 hover:brightness-105">
+            <Link to="/" className="text-light_yellow underline brightness-90 transition_150 hover:brightness-105">
               Log in
             </Link>
           </h1>

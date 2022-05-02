@@ -16,10 +16,7 @@ const Content = () => {
       <div className="">
         {/* Sign up Link */}
         <div className="text-right">
-          <Link
-            to="/sign-up"
-            className="text-lg font-medium inline-block text-gray-400 transition-all duration-300 hover:text-gray-300"
-          >
+          <Link to="/" className="text-lg font-medium inline-block text-gray-400 transition-all duration-300 hover:text-gray-300">
             Log in
           </Link>
         </div>
