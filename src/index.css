@@ -20,6 +20,9 @@
   .input_icon {
     @apply absolute top-0 bottom-0 right-0 pr-3 text-xl text-gray-400 flex items-center z-10;
   }
+  .input_err {
+    @apply text-red-700 mt-1 before:h-1.5 before:w-1.5 before:rounded-full before:bg-red-700 before:inline-block before:mr-1;
+  }
   .social_btn {
     @apply rounded-full bg-neutral-400 text-light_dark xs:text-xl 2xl:text-2xl p-2 xs:p-4 2xl:p-5 mr-5 transition_200 hover:text-white;
   }

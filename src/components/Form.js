@@ -1,36 +1,51 @@
 // React
-import { useState } from "react";
-
+import { useContext } from "react";
 // React router
 import { Link } from "react-router-dom";
-
-// UI
-import { AiOutlineUser, AiOutlineMail, AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+// React-hook-form
+import { useForm } from "react-hook-form";
+// Components
+import FormInputs from "./FormInputes";
+// Context API
+import { AppContext } from "../Context";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
-  const [hiddenPass, setHiddenPass] = useState(true);
+  // Context
+  const { dispatchUserEvent } = useContext(AppContext);
+
+  // React router navigate
+  const navigate = useNavigate();
+
+  // React-hook-form
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({ defaultValues: { firstName: "", email: "", password: "" } });
+
+  // Submit func
+  const SubmitHandler = (data) => {
+    // reseting form inputs
+    reset();
+    // sending user's data to context
+    const { firstName, email, password } = data;
+    const userData = { firstName, email, password };
+    dispatchUserEvent("SIGN_IN", { newUser: userData });
+    // Navigating to the HomeScreen of the main app
+    navigate("/home");
+  };
 
   // JSX ///////////////////////////////
   return (
-    <form className="h-fit pb-4 xl:pb-0 pt-10 lg:pt-0 border-b border-b-gray-500">
-      <div className="relative mb-8 2xl:mb-10 rounded-lg">
-        <span className="input_icon">
-          <AiOutlineUser />
-        </span>
-        <input className="form_input" type="text" placeholder="Name" />
-      </div>
-      <div className="relative mb-8 2xl:mb-10 rounded-lg">
-        <span className="input_icon">
-          <AiOutlineMail />
-        </span>
-        <input className="form_input" type="email" placeholder="E-mail" />
-      </div>
-      <div className="relative rounded-lg">
-        <button className="input_icon" onClick={() => setHiddenPass(!hiddenPass)} type="button">
-          {hiddenPass ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-        </button>
-        <input className="form_input" type={hiddenPass ? "password" : "text"} placeholder="Password" />
-      </div>
+    <form
+      className="h-fit pb-4 xl:pb-0 pt-10 lg:pt-0 border-b border-b-gray-500"
+      onSubmit={handleSubmit(SubmitHandler)}
+      autoComplete="off"
+    >
+      {/* Inputes */}
+      <FormInputs register={register} errors={errors} />
 
       {/* Btn & Link */}
       <div className="mt-12 grid_flow_2">
